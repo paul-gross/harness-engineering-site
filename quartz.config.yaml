@@ -11,6 +11,8 @@ configuration:
     - private
     - templates
     - .obsidian
+    # runnable experiment artifacts, catalogued in the repo but not part of the garden
+    - experiments
   theme:
     fontOrigin: googleFonts
     cdnCaching: true
@@ -43,7 +45,8 @@ plugins:
   - source: github:quartz-community/created-modified-date
     enabled: true
     options:
-      defaultDateType: modified
+      # show when a note was planted, not the date of the last bulk cleanup commit
+      defaultDateType: created
       priority:
         - frontmatter
         - git
