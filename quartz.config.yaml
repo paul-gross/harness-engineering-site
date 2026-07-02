@@ -45,8 +45,8 @@ plugins:
   - source: github:quartz-community/created-modified-date
     enabled: true
     options:
-      # show when a note was planted, not the date of the last bulk cleanup commit
-      defaultDateType: created
+      # living documents: surface when a note was last tended
+      defaultDateType: modified
       priority:
         - frontmatter
         - git
@@ -202,7 +202,16 @@ plugins:
       links:
         GitHub: https://github.com/paul-gross/harness-engineering
   - source: github:quartz-community/recent-notes
-    enabled: false
+    enabled: true
+    options:
+      title: Recently tended
+      limit: 5
+      showTags: false
+      hideTagPages: true
+      hideFolderPages: true
+    layout:
+      position: right
+      priority: 60
   - source: github:quartz-community/spacer
     enabled: true
     options: {}
