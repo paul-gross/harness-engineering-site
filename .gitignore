@@ -11,3 +11,8 @@ private/
 replit.nix
 .quartz/
 quartz/cli/tui/dist/
+
+# generated content (synced from paul-gross/harness-engineering at build time)
+content/*
+!content/.gitkeep
+content-src/
