@@ -26,6 +26,11 @@ node scripts/prepare-content.mjs <path-to-harness-engineering> content
 npx quartz build --serve
 ```
 
+> [!warning]
+> `content/` is generated and must never be committed — but it also must **not** be
+> gitignored: Quartz's file globber respects `.gitignore`, so ignoring it produces an
+> empty site (the CI build reads `content/` in a fresh checkout where it's rebuilt).
+
 ## Updating Quartz
 
 This repo tracks upstream Quartz (`upstream` remote). To update:
