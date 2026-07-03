@@ -78,6 +78,9 @@ for (const { dest: file, srcRel } of copied) {
     }
     const dates = gitDates(srcRel)
     if (dates) {
+      // Essays are written at a date and never changed — pin the displayed
+      // (modified) date to the written date so later touch-ups don't move it.
+      if (srcRel.startsWith("essays/")) dates.modified = dates.created
       fields.push(`created: ${dates.created}`, `modified: ${dates.modified}`)
     }
     if (fields.length) {

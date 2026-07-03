@@ -12,6 +12,7 @@ ExternalPlugin.Explorer({
   mapFn: (node) => {
     if (node.isFolder && node.displayName) {
       const labels: Record<string, string> = {
+        essays: "Essays",
         philosophy: "Philosophy",
         concepts: "Concepts",
         practical: "Practical",
@@ -24,7 +25,7 @@ ExternalPlugin.Explorer({
   },
   sortFn: (a, b) => {
     if (a.isFolder && b.isFolder) {
-      const order = ["philosophy", "concepts", "practical", "application architecture"]
+      const order = ["essays", "philosophy", "concepts", "practical", "application architecture"]
       const ai = order.indexOf(a.displayName.toLowerCase().replace(/-/g, " ").trim())
       const bi = order.indexOf(b.displayName.toLowerCase().replace(/-/g, " ").trim())
       const rankDiff = (ai === -1 ? order.length : ai) - (bi === -1 ? order.length : bi)
