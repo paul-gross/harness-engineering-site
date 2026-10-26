@@ -4,7 +4,9 @@ configuration:
   pageTitleSuffix: " · grosscode.net"
   enableSPA: true
   enablePopovers: true
-  analytics: null
+  analytics:
+    provider: goatcounter
+    websiteId: paul-gross
   locale: en-US
   baseUrl: grosscode.net
   ignorePatterns:
